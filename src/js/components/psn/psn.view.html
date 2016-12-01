@@ -1,0 +1,12 @@
+
+<div ng-repeat="row in psnCtrl.games" class="row gameRow">
+  <div ng-repeat="game in row" class="col-md-6">
+    <img src="{{game.trophyTitleIconUrl}}" alt="" />
+    <p>
+      {{game.trophyTitleName}}
+      {{game.fromUser.progress}}% Trophies
+      <button ng-click="psnCtrl.findFriends(game.fromUser.onlineId, game.trophyTitleName, game.trophyTitleIconUrl)">See Possible Friends</button>
+      <button ng-click="psnCtrl.changeTime(game.fromUser.onlineId, game.trophyTitleName, game.trophyTitleIconUrl)">Change Times</button>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+/* add custom styles */
+img, p{
+  display: inline-block;
+}

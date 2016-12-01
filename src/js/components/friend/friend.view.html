@@ -1,0 +1,19 @@
+<div>
+  <img src="{{friendCtrl.gameSetup.gameImg}}" alt="">
+  <h1>{{friendCtrl.gameSetup.name}}</h1>
+
+  <ul class="similar">
+    <li ng-repeat="game in friendCtrl.similar_games">{{game.name}}</li>
+  </ul>
+
+  <h3 ng-repeat="friend in friends">{{friend.username}}, plays at <ul>
+    <li ng-repeat="time in friend['time-plays'] | format">{{time}}</li>
+  </ul>
+  <button ng-click="friendCtrl.friendReqs = true">Send Friend Request</button>
+  <form ng-if="friendCtrl.friendReqs">
+    <label>Enter password to send friend request to {{friend.username}}</label>
+    <input type="password" ng-model="friendCtrl.pass">
+    <button type="button" ng-click="friendCtrl.friendReq(friend.username, friendCtrl.pass); friendCtrl.pass = ''">Send</button>
+  </form>
+  </h3>
+</div>

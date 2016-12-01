@@ -1,0 +1,13 @@
+<p>
+  Sign into PSN!
+</p>
+<pclass="error">
+  {{mainCtrl.error}}
+</p>
+<form class="PSNSignIn">
+  <label for="Username">PSN Email</label>
+  <input type="text" ng-model="mainCtrl.psnUserName" class="form-control" id="Username" ng-value="mainCtrl.user">
+  <label for="Password">Password</label>
+  <input type="password" ng-model="mainCtrl.psnPassword" class="form-control" id="Password" ng-value="mainCtrl.pass">
+  <button ng-click="mainCtrl.signInPsn(mainCtrl.psnUserName, mainCtrl.psnPassword)">Login</button>
+</form>
