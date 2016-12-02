@@ -6,7 +6,7 @@
     .module('myApp.config', [])
     .config(appConfig);
 
-  function appConfig($stateProvider) {
+  function appConfig($stateProvider, $urlRouterProvider) {
     var homeState = {
       name: 'home',
       url: '/',
@@ -40,6 +40,8 @@
     $stateProvider.state(psnState)
     $stateProvider.state(setupState)
     $stateProvider.state(friendState)
+    $urlRouterProvider.otherwise('/');
+
   }
 
 })();
