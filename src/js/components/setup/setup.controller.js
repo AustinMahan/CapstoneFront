@@ -33,6 +33,7 @@
         headers: {'Content-Type': 'application/json'}
       })
       .then(data => {
+        $location.path('/psn')
         console.log(data);
       })
     }

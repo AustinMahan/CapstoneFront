@@ -14,7 +14,6 @@
     vm.greeting = 'Hello World!';
     if (!$rootScope.games) $location.path("/")
 
-    console.log($rootScope.games)
     vm.games = $rootScope.games
 
     vm.findFriends = function (username, gamename, gameImg) {

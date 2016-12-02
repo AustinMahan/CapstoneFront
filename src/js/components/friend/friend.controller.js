@@ -16,19 +16,23 @@
     vm.gameSetup = $rootScope.gameSetup
 
     $http.get('http://localhost:3000/psn/similar/' + vm.gameSetup.name).then(data => {
-      console.log(data);
       vm.similar_games = data.data.similar_games
     })
 
-    vm.friendReq = function (username, password) {
+    vm.init = function () {
+      console.log();
+      $rootScope.friends.forEach(friend => vm[friend.name] = {})
+    }
+    vm.friendReq = function (username, message) {
       $http({
         method: 'POST',
         url: 'http://localhost:3000/psn/friendReq/' + username,
-        data: {email: $rootScope.userEmail, password},
+        data: {email: $rootScope.userEmail, message},
         headers: {'Content-Type': 'application/json'}
       })
       .then(data => {
-        console.log(data);
+        if(typeof data.data == 'string') vm[username].message = data.data
+        else vm[username].message = "Friend Request Sent"
       })
     }
   }
