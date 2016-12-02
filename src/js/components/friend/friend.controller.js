@@ -15,7 +15,7 @@
     if (!$rootScope.gameSetup) $location.path("/")
     vm.gameSetup = $rootScope.gameSetup
 
-    $http.get('http://localhost:3000/psn/similar/' + vm.gameSetup.name).then(data => {
+    $http.get('https://obscure-hamlet-56226.herokuapp.com/psn/similar/' + vm.gameSetup.name).then(data => {
       vm.similar_games = data.data.similar_games
     })
 
@@ -26,7 +26,7 @@
     vm.friendReq = function (username, message) {
       $http({
         method: 'POST',
-        url: 'http://localhost:3000/psn/friendReq/' + username,
+        url: 'https://obscure-hamlet-56226.herokuapp.com/psn/friendReq/' + username,
         data: {email: $rootScope.userEmail, message},
         headers: {'Content-Type': 'application/json'}
       })
