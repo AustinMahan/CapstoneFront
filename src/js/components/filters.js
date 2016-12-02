@@ -13,7 +13,7 @@ function format () {
     .map((row, i) => {
       return row.map((el, j) => {
         if(el == 1) return days[i] + ' ' + times[j]
-      }).filter(el => el).join()
+      }).filter(el => el).join(', ')
     }).filter(el => el.length > 0)
     return output
   }
