@@ -13,7 +13,7 @@
     var vm = this
     vm.greeting = 'Hello World!';
     vm.user = "amah0424@gmail.com"
-    vm.pass = "Cuddles21."
+    // vm.pass = "Cuddles21."
 
     vm.button = true;
     vm.signInPsn = function(username, password){
