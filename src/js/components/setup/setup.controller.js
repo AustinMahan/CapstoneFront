@@ -25,16 +25,14 @@
 
     vm.saveTimes = function () {
       var times = vm.times.map(arr => arr.map(el => el ? 1 : 0).join('')).join('-')
-      console.log($rootScope.gameSetup);
       $http({
         method: 'POST',
-        url: 'https://obscure-hamlet-56226.herokuapp.com/psn/' + $rootScope.user,
+        url: 'http://localhost:3000/psn/' + $rootScope.user,
         data: {user: $rootScope.user, game: $rootScope.gameSetup, times: times},
         headers: {'Content-Type': 'application/json'}
       })
       .then(data => {
         $location.path('/psn')
-        console.log(data);
       })
     }
   }

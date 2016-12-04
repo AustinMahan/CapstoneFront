@@ -1,4 +1,9 @@
 /* add custom styles */
-img, p{
-  display: inline-block;
+.psnImg{
+  float: left;
+  padding-right: 15px;
+}
+
+.gameRow{
+  padding: 10px;
 }
