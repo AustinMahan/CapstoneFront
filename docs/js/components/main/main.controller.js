@@ -20,7 +20,7 @@
 
     vm.button = true;
     vm.signInPsn = function(username, password){
-      $http.post('http://localhost:3000/psn', {username, password})
+      $http.post('https://obscure-hamlet-56226.herokuapp.com/psn', {username, password})
       .then(data => {
         console.log(data);
         if (data.data.error) vm.error = data.data.error
