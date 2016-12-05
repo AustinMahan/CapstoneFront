@@ -12,7 +12,8 @@
       'myApp.components.main',
       'myApp.components.psn',
       'myApp.components.setup',
-      'myApp.components.friend'
+      'myApp.components.friend',
+      'myApp.components.signup'
     ]);
 
 })();

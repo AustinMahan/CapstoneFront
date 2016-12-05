@@ -35,6 +35,13 @@
       controller: 'friendController',
       controllerAs: 'friendCtrl'
     }
+    var signupState = {
+      name: 'signup',
+      url: '/signup',
+      templateUrl: 'js/components/signup/signup.view.html',
+      controller: 'signupController',
+      controllerAs: 'signupCtrl'
+    }
 
     var otherwiseState = {
       name: 'otherwise',
@@ -48,6 +55,7 @@
     $stateProvider.state(psnState)
     $stateProvider.state(setupState)
     $stateProvider.state(friendState)
+    $stateProvider.state(signupState)
     $stateProvider.state(otherwiseState)
   }
 
