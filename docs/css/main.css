@@ -69,6 +69,8 @@ li{
   margin: 15px;
   overflow: scroll;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .chatForm{
   width: 100%;
@@ -88,20 +90,19 @@ li{
   padding: 5px 10px;
   margin-bottom: 10px;
   margin-top: 10px;
-  float: right;
   margin-right: 60px;
   width: 50%;
   background-color: lightblue;
   border-radius: 20px;
+  align-self: flex-end;
 }
 .left{
   font-size: 18px;
-  margin-bottom: 10px;
+  padding: 5px 10px;
   margin-bottom: 10px;
   margin-top: 20px;
-  margin-left: 60px;
+  margin-left: 20px;
   width: 50%;
-  left: 10px;
   background-color: lightgrey;
   border-radius: 20px;
 }
