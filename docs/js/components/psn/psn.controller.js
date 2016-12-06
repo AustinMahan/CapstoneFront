@@ -17,17 +17,15 @@
     vm.games = $rootScope.games
 
     vm.findFriends = function (username, gamename, gameImg) {
-      $http.get(`https://obscure-hamlet-56226.herokuapp.com/psn/username/${username}/game/${gamename}`)
+      $http.get(`http://localhost:3000/psn/username/${username}/game/${gamename}`)
       .then(data => {
         if (!data.data[0]["time-plays"]) {
           data.data[0].gameImg = gameImg
           $rootScope.gameSetup = data.data[0];
           $location.path("/setup");
         } else {
-          $http.get(`https://obscure-hamlet-56226.herokuapp.com/psn/${username}/${gamename}`)
-          .then(things => {
-            console.log(things.data);
-            $rootScope.friends = things.data})
+          $http.get(`http://localhost:3000/psn/${username}/${gamename}`)
+          .then(things => $rootScope.friends = things.data)
             .catch(console.log)
           data.data[0].gameImg = gameImg
           $rootScope.gameSetup = data.data[0];

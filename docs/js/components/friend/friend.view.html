@@ -3,19 +3,27 @@
   <h1>{{friendCtrl.gameSetup.name}}</h1>
 
   <ul class="similar">
+    <h3>Similar Games</h3>
     <li ng-repeat="game in friendCtrl.similar_games"><a ng-href="{{game.site_detail_url}}">{{game.name}}</a></li>
   </ul>
 
   <h3 ng-repeat="friend in friends">{{friend.username}}, plays at <ul>
     <li ng-repeat="time in friend['time-plays'] | format track by $index">{{time}}</li>
   </ul>
-  <button ng-click="friendCtrl[friend.username].friendReqs = !friendCtrl[friend.username].friendReqs">Send Friend Request</button>
+  <button ng-click="friendCtrl[friend.username].friendReqs = !friendCtrl[friend.username].friendReqs; friendCtrl.chat(friend.username)" class="btn btn-info">Chat with {{friend.username}}</button>
   <p>{{friendCtrl[friend.username].message}}</p>
-  <form ng-if="friendCtrl[friend.username].friendReqs">
-    <label>Enter message(optional) to send friend request to {{friend.username}}</label>
-    <input type="password" ng-model="friendCtrl.message">
-    <button type="button" ng-click="friendCtrl.friendReq(friend.username, friendCtrl.message); friendCtrl.message = ''">Send</button>
-  </form>
+  <div ng-if="friendCtrl[friend.username].friendReqs" class="messegesBox" id="{{friend.username}}">
+    <div class="messeges">
+      <p ng-repeat="msg in friendCtrl.msgs | users:friend.username" ng-class="{right: msg.fromUser == user, left: msg.fromUser !== user}">{{msg.messege}}</p>
+    </div>
+
+    <form ng-if="friendCtrl[friend.username].friendReqs" class="chatForm" ng-submit="friendCtrl.sendMsg(user, friend.username, friendCtrl.message); friendCtrl.message = ''">
+      <!-- <label>Enter message to send to {{friend.username}}</label> -->
+      <input type="text" ng-model="friendCtrl.message" class="inputField">
+      <button type="submit"  class="inputBtn">Send</button>
+    </form>
+  </div>
+
   </h3>
   {{friendCtrl.init()}}
 </div>

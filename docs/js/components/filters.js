@@ -2,6 +2,7 @@
   angular
   .module('myApp.filters', [])
   .filter('format', format)
+  .filter('users', users)
 })();
 
 
@@ -16,5 +17,12 @@ function format () {
       }).filter(el => el).join(', ')
     }).filter(el => el.length > 0)
     return output
+  }
+}
+function users () {
+  return function (arr, user1) {
+    return arr.filter(msg => {
+      return msg.fromUser == user1 || msg.toUser == user1
+    })
   }
 }

@@ -9,6 +9,7 @@
       'ui.router',
       'myApp.config',
       'myApp.filters',
+      'myApp.services',
       'myApp.components.main',
       'myApp.components.psn',
       'myApp.components.setup',
