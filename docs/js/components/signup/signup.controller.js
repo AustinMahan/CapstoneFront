@@ -13,7 +13,7 @@
     var vm = this
     vm.greeting = 'Hello World!';
     vm.signupPsn = function (username, password) {
-      $http.post('http://localhost:3000/psn/signup', {username, password})
+      $http.post('https://obscure-hamlet-56226.herokuapp.com/psn/signup', {username, password})
       .then(console.log)
     }
   }
