@@ -3,6 +3,36 @@
   float: left;
   padding-right: 15px;
 }
+.main{
+  text-align: center;
+}
+.logo{
+  height: 50px;
+}
+.glyphicon-spin {
+  -webkit-animation: spin 1000ms infinite linear;
+  animation: spin 1000ms infinite linear;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 
 .gameRow{
   padding: 10px;
@@ -19,6 +49,12 @@ body {
 
 li{
   font-size: 18px;
+}
+
+.item > img{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .messegesBox{

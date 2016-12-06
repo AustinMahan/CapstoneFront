@@ -1,3 +1,21 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li ng-repeat="game in psnCtrl.allGames track by $index" data-target="#myCarousel" data-slide-to="{{$index}}" ng-if="$index > 0"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="{{psnCtrl.allGames[0].trophyTitleIconUrl}}" alt="">
+    </div>
+
+    <div class="item"  ng-repeat="game in psnCtrl.allGames track by $index" ng-if="$index > 0">
+      <img src="{{game.trophyTitleIconUrl}}" alt="">
+    </div>
+  </div>
+</div>
 
 <div ng-repeat="row in psnCtrl.games" class="row gameRow">
   <div ng-repeat="game in row" class="col-md-6">
