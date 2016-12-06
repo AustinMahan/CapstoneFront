@@ -8,18 +8,18 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="{{psnCtrl.allGames[0].trophyTitleIconUrl}}" alt="">
+      <img ng-src="{{psnCtrl.allGames[0].trophyTitleIconUrl}}" alt="">
     </div>
 
     <div class="item"  ng-repeat="game in psnCtrl.allGames track by $index" ng-if="$index > 0">
-      <img src="{{game.trophyTitleIconUrl}}" alt="">
+      <img ng-src="{{game.trophyTitleIconUrl}}" alt="">
     </div>
   </div>
 </div>
 
 <div ng-repeat="row in psnCtrl.games" class="row gameRow">
   <div ng-repeat="game in row" class="col-md-6">
-    <img class="psnImg" src="{{game.trophyTitleIconUrl}}" alt="" />
+    <img class="psnImg" ng-src="{{game.trophyTitleIconUrl}}" alt="" />
     <h4>{{game.trophyTitleName}}</h4>
     <p>{{game.fromUser.progress}}% Trophies</p>
     <button class="btn btn-success" ng-click="psnCtrl.findFriends(game.fromUser.onlineId, game.trophyTitleName, game.trophyTitleIconUrl)">See Possible Friends</button>

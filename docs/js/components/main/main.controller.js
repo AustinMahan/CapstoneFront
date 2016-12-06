@@ -22,7 +22,7 @@
       vm.error = ''
       $http.post('https://obscure-hamlet-56226.herokuapp.com/psn', {username, password})
       .then(data => {
-        if (data.data.error) vm.error = data.data.error
+        if (data.data.error) vm.error = 'Wrong gamertag/password'
         else {
           $rootScope.games = split(data.data, 2)
           $rootScope.user = data.data[0].fromUser.onlineId
