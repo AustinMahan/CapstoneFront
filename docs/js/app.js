@@ -7,6 +7,8 @@
   angular
     .module('myApp', [
       'ui.router',
+      'ui.bootstrap',
+      // 'myApp.carousel',
       'myApp.config',
       'myApp.filters',
       'myApp.services',

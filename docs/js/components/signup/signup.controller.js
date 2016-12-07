@@ -12,10 +12,15 @@
     /*jshint validthis: true */
     var vm = this
     vm.greeting = 'Hello World!';
-    vm.signupPsn = function (username, password) {
-      $http.post('https://obscure-hamlet-56226.herokuapp.com/psn/signup', {username, password})
-      .then(() => $location.path('/'))
-      .catch(() => $('.btn').button('reset'))
+    vm.signupPsn = function (username, password, confpass, email) {
+      vm.error = ''
+      if (password == confpass) {
+        $http.post('https://obscure-hamlet-56226.herokuapp.com/psn/signup', {username, password, email})
+        .then(() => $location.path('/'))
+        .catch(() => $('.btn').button('reset'))
+      } else {
+        vm.error = 'Passwords do not match'
+      }
     }
   }
 

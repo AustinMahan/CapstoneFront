@@ -115,3 +115,21 @@ li{
   border-radius: 20px;
   border: 5px solid white;
 }
+
+#slides_control > div{
+  height: auto;
+}
+.carImg{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#slides_control {
+  height: 400px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel-control{
+  display: none;
+}

@@ -1,22 +1,22 @@
-<div class="main">
-  <h1> <img class="logo" ng-src="js/gamelink.png" alt="">Game Link</h1>
-  <h3>Connect with people who are playing the same games at the same time</h3>
+<div class="col-md-8 col-md-offset-2">
+  <div class="main">
+    <h1> <img class="logo" ng-src="js/gamelink.png" alt="">Game Link</h1>
+    <h4>Connect with people who are playing the same games at the same time</h4>
+  </div>
+
+  <p>
+    Sign into PSN!
+  </p>
+  <p class="error">
+    {{mainCtrl.error}}
+  </p>
+  <form class="PSNSignIn">
+    <label for="Username">PSN GamerTag</label>
+    <input type="text" ng-model="mainCtrl.psnUserName" class="form-control" id="Username" ng-value="mainCtrl.user">
+    <label for="Password">Password</label>
+    <input type="password" ng-model="mainCtrl.psnPassword" class="form-control" id="Password" ng-value="mainCtrl.pass">
+    <button type="submit" class="btn btn-info" id="load" data-loading-text="<i class='glyphicon glyphicon-repeat glyphicon-spin'></i> Loading Request" ng-click="mainCtrl.signInPsn(mainCtrl.psnUserName, mainCtrl.psnPassword); mainCtrl.button = false">Login</button>
+  </form>
+
+  <p>Or Sign up <a ng-click="mainCtrl.signup()">here</a></p>
 </div>
-
-
-<p>
-  Sign into PSN!
-</p>
-<pclass="error">
-  {{mainCtrl.error}}
-</p>
-<form class="PSNSignIn">
-  <label for="Username">PSN GamerTag</label>
-  <input type="text" ng-model="mainCtrl.psnUserName" class="form-control" id="Username" ng-value="mainCtrl.user">
-  <label for="Password">Password</label>
-  <input type="password" ng-model="mainCtrl.psnPassword" class="form-control" id="Password" ng-value="mainCtrl.pass">
-  <button type="submit" class="btn btn-info" id="load" data-loading-text="<i class='glyphicon glyphicon-repeat glyphicon-spin'></i> Loading Request" ng-click="mainCtrl.signInPsn(mainCtrl.psnUserName, mainCtrl.psnPassword); mainCtrl.button = false">Login</button>
-</form>
-
-<p>Or Sign up</p>
-<button ng-click="mainCtrl.signup()" class="btn btn-success">Sign up</button>

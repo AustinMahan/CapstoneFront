@@ -39,13 +39,14 @@
       $rootScope.gameSetup = {username, name, gameImg}
       $location.path("/setup")
     }
-    // setTimeout(function() {
-    //   $('.carousel').carousel({
-    //     interval: 2000
-    //   })
-    // }, 500)
+
+    vm.myInterval = 3000;
 
   }
-
+  // setTimeout(function() {
+  //   $('.carousel').carousel({
+  //     interval: 4000
+  //   })
+  // }, 500)
 
 })();
