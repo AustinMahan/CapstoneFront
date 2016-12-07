@@ -18,11 +18,15 @@
 </div>
 
 <div ng-repeat="row in psnCtrl.games" class="row gameRow">
-  <div ng-repeat="game in row" class="col-md-6">
-    <img class="psnImg" ng-src="{{game.trophyTitleIconUrl}}" alt="" />
-    <h4>{{game.trophyTitleName}}</h4>
-    <p>{{game.fromUser.progress}}% Trophies</p>
-    <button class="btn btn-success" ng-click="psnCtrl.findFriends(game.fromUser.onlineId, game.trophyTitleName, game.trophyTitleIconUrl)">See Possible Friends</button>
-    <button class="btn btn-info" ng-click="psnCtrl.changeTime(game.fromUser.onlineId, game.trophyTitleName, game.trophyTitleIconUrl)">Change Times</button>
+  <div ng-repeat="game in row" class="col-md-6 game">
+    <div class="col-md-8">
+      <img class="psnImg" ng-src="{{game.trophyTitleIconUrl}}" alt="" />
+    </div>
+    <div class="col-md-4">
+      <h4>{{game.trophyTitleName}}</h4>
+      <p>{{game.fromUser.progress}}% Trophies</p>
+      <button class="btn btn-success psnPageBtns" ng-click="psnCtrl.findFriends(game.fromUser.onlineId, game.trophyTitleName, game.trophyTitleIconUrl)">See Possible Friends</button>
+      <button class="btn btn-info psnPageBtns" ng-click="psnCtrl.changeTime(game.fromUser.onlineId, game.trophyTitleName, game.trophyTitleIconUrl)">Change Times</button>
+    </div>
   </div>
 </div>
